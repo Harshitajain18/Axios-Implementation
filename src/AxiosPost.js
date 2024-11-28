@@ -18,7 +18,7 @@ const HandleForm = (event) =>{
 
 const HandleData = (event) =>{
     event.preventDefault();
-    axios.post("https://jsonplaceholder.typicode.com/users",InputData).then((res)=>{
+    axios.post("https://jsonplaceholder.typicode.com/users" , InputData).then((res)=>{
         console.log(res);
     }).catch((err)=>{
         console.log(err)
@@ -38,4 +38,4 @@ return (
   )
 }
 
-export default AxiosPost
+export default AxiosPost;
