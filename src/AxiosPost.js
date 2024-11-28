@@ -4,19 +4,19 @@ import axios from 'axios';
 
 const AxiosPost = () => {
     
-const data = {
-    fname:"",
-    lname:""
-}
+    // const data = {
+    //     fname:"",
+    //     lname:""
+    // }
 
-const [InputData,setInputData]=useState(data);
+const [InputData,setInputData]=useState([]);
 
-const HandleForm = (event) =>{
+const HandleData = (event) =>{
     console.log(event.target.value);
     setInputData({...InputData, [event.target.name]:event.target.value})
 }
 
-const HandleData = (event) =>{
+const HandleForm = (event) =>{
     event.preventDefault();
     axios.post("https://jsonplaceholder.typicode.com/users" , InputData).then((res)=>{
         console.log(res);
@@ -27,10 +27,10 @@ const HandleData = (event) =>{
 
 return (
     <div>
-      <form className='form' onSubmit={HandleData}>
-        <input type='text' placeholder='Enter First Name' name='fname' onChange={HandleForm}></input>
+      <form className='form' onSubmit={HandleForm}>
+        <input type='text' placeholder='Enter First Name' name='fname' onChange={HandleData}></input>
         <br></br>
-        <input type='text' placeholder='Enter Last Name' name='lname'  onChange={HandleForm}></input>
+        <input type='text' placeholder='Enter Last Name' name='lname'  onChange={HandleData}></input>
         <br></br>
         <button className='btn'>Submit</button>
       </form>

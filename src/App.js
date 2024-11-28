@@ -1,13 +1,13 @@
-// import logo from './logo.svg';
 import './App.css';
 // import Axios from './Axios';
-import AxiosPost from './AxiosPost';
-// import './Axios.css';
+// import AxiosPost from './AxiosPost';
+import AxiosPut from './AxiosPut';
 
 function App() {
   return (
     // <Axios/>
-    <AxiosPost/>
+    // <AxiosPost/>
+    <AxiosPut/>
   );
 }
 
